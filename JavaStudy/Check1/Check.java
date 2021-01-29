@@ -19,7 +19,7 @@ public class Check{
             System.out.print(data[i] + " ");
         }
         System.out.println();
-        for (int i = 0; i < data.length -4; i++) {
+        for (int i = 0; i < data.length -1; i++) {
             for (int j = data.length -1; j > i; j--) {
                 /*
                 * 問3
