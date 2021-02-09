@@ -1,0 +1,45 @@
+@media screen and (max-width: 479px) {
+
+
+.header{
+  height: 200px;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.left{
+  height: 100px;
+  width: 200px;
+  background-color: #80bfa8;
+  float: none;
+}
+
+
+.footer{
+  width: 200px;
+}
+
+
+.header-inner{
+  height: 160px;
+  width: 60px;
+  background-color: white;
+  float: right;
+  margin-right: 70px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.right{
+  height: 210px;
+  width: 200px;
+}
+
+.right-inner-contents{
+  margin: 20px 30px;
+}
+
+}
