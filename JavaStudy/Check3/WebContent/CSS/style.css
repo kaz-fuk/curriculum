@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+.login {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+label {
+  display: inline-block;
+  padding: 10px;
+  color: white;
+  font-size: 10px;
+}
+
+.bar{
+  background-color: gray;
+}
