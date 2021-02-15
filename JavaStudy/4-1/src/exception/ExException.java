@@ -53,12 +53,12 @@ public class ExException {
 
 				switch (parameter) {
 				case CONST_EXCEPTION_TRIGER_NULL:
-					errorNull();
+					StringLength(null);
 					break;
 
 				case CONST_EXCEPTION_TRIGER_ARRAY_OUT_OF_BOUNDS:
 					int[] nums = new int[3];
-					nums[4] = 999;
+					nums[5] = 999;
 					break;
 
 				case CONST_EXCEPTION_TRIGER_CAST:
@@ -72,7 +72,7 @@ public class ExException {
 				}
 
 			} catch (NullPointerException e) {
-				printException(e);
+				System.out.println(e + ": " + CONST_MSG_NULLPO);
 			} catch (ArrayIndexOutOfBoundsException e) {
 				printException(e);
 			} catch (ClassCastException e) {
@@ -86,21 +86,11 @@ public class ExException {
 		System.out.println("お疲れ様でした！");
 	}
 
-	/**
-	 * 問①: 以下のルールに沿ってNullPointerExceptionを投げるメソッドを実装しなさい。 ルール1: private static void
-	 * 任意のメソッド名 throws 上位へ投げるExceptionクラス名 { NullPointerExceptionを発生させる処理 } ルール2:
-	 * 例外発生時に設定するメッセージは、定義済みの定数から適当なものを指定してください。
-	 */
-	// ここへ記述
-	private static void errorNull() throws NullPointerException {
-		System.out.println(CONST_MSG_NULLPO);
+	private static void StringLength(String str) throws NullPointerException {
+		int strlen = str.length();
+		System.out.println(str + "は" + strlen + "文字です");
 	}
 
-	/**
-	 * 例外処理のメッセージを出力
-	 *
-	 * @param e 発生した例外
-	 */
 	private static void printException(final Exception e) {
 		System.out.println(e);
 	}
