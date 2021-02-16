@@ -86,7 +86,7 @@ public class ExException {
 		System.out.println("お疲れ様でした！");
 	}
 
-	private static void StringLength(String str) throws Exception {
+	private static void StringLength(String str) throws NullPointerException {
 		if (str == null) {
 			throw new NullPointerException(CONST_MSG_NULLPO);
 		}
