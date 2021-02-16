@@ -53,7 +53,7 @@ public class ExException {
 
 				switch (parameter) {
 				case CONST_EXCEPTION_TRIGER_NULL:
-					StringLength(null);
+					StringLength("null");
 					break;
 
 				case CONST_EXCEPTION_TRIGER_ARRAY_OUT_OF_BOUNDS:
@@ -72,10 +72,10 @@ public class ExException {
 				}
 
 			} catch (NullPointerException e) {
-				System.out.println(e + ": " + CONST_MSG_NULLPO);
+				System.out.println(e);
 			} catch (ArrayIndexOutOfBoundsException e) {
 				printException(e);
-			} catch (ClassCastException e) {
+			} catch (Exception e) {
 				printException(e);
 			} finally {
 				System.out.println("リトライ回数 = " + retryCounter++);
@@ -86,7 +86,10 @@ public class ExException {
 		System.out.println("お疲れ様でした！");
 	}
 
-	private static void StringLength(String str) throws NullPointerException {
+	private static void StringLength(String str) throws Exception {
+		if (str == null) {
+			throw new NullPointerException(CONST_MSG_NULLPO);
+		}
 		int strlen = str.length();
 		System.out.println(str + "は" + strlen + "文字です");
 	}
