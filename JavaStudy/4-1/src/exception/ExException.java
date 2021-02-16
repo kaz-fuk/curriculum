@@ -53,7 +53,7 @@ public class ExException {
 
 				switch (parameter) {
 				case CONST_EXCEPTION_TRIGER_NULL:
-					StringLength("null");
+					StringLength(null);
 					break;
 
 				case CONST_EXCEPTION_TRIGER_ARRAY_OUT_OF_BOUNDS:
@@ -72,7 +72,7 @@ public class ExException {
 				}
 
 			} catch (NullPointerException e) {
-				System.out.println(e);
+				printException(e);
 			} catch (ArrayIndexOutOfBoundsException e) {
 				printException(e);
 			} catch (Exception e) {
