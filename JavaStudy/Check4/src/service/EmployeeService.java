@@ -31,10 +31,11 @@ public class EmployeeService {
 
 	// 問② 入力された値で、UPDATEする文
 	/** ・SQL UPDATE文 */
-	private static final String SQL_UPDATE = "update employee_table set '?' = to_char(current_timestamp, 'yyyy/MM/dd HH24:MI:SS') where id = '?'";
+	private static final String SQL_UPDATE = "update employee_table set login_time = ? where id = ? ";
+
 	// 問③ 入力されたIDとPassWordをキーにして、検索するSELECT文
 	/** ・SQL SELECT文 */
-   private static final String SQL_SELECT = "select * from employee_table where id = '?' AND password = '?'";
+	private static final String SQL_SELECT = "select * from employee_table where id = ? AND password = ? ";
 
 	EmployeeBean employeeDate = null;
 
@@ -79,12 +80,12 @@ public class EmployeeService {
 			resultSet = preparedStatement.executeQuery();
 
 			while (resultSet.next()) {
-				// 問⑦ tmpName,tmpComment,tmpLoginTimeに適当な値を入れてください。
+//				// 問⑦ tmpName,tmpComment,tmpLoginTimeに適当な値を入れてください。
 				String tmpName = resultSet.getString("name");
 				String tmpComment = resultSet.getString("comment");
 				String tmpLoginTime = resultSet.getString("login_time");
-
-				// 問⑧ EmployeeBeanに取得したデータを入れてください。
+//
+//				// 問⑧ EmployeeBeanに取得したデータを入れてください。
 				employeeDate = new EmployeeBean();
 				employeeDate.setName(tmpName);
 				employeeDate.setComment(tmpComment);
