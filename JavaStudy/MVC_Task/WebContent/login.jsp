@@ -9,7 +9,7 @@
 <%
     //リクエストより社員番号を取得: 関数型インターフェース（ラムダ式）
     Function<HttpServletRequest, Object[]> rmdGetResponseInfo = (rmdRequest) -> {
-        // request: responseBean
+     // request: responseBean
         ResponseBean rb = (ResponseBean) request.getAttribute("responseBean");
         int requestStatus = 0;
         String message = "";
@@ -71,8 +71,8 @@
 <!-- FIXME Step-1-1: login.jspに適用するcssファイルのリンクタグを記述しなさい。-->
 <!-- Tips1: common.css、login.cssの2つを適用-->
 <!-- Tips2: 適用するcssファイルのパスの書き方に注意 -->
-<link rel="stylesheet" type="text/css" href="./css/common.css">
-<link rel="stylesheet" type="text/css" href="./css/login.css">
+<link rel="stylesheet" type="text/css" href="css/common.css">
+<link rel="stylesheet" type="text/css" href="css/login.css">
 <script type="text/javascript" src="js/common.js"/></script>
 <title>ログイン</title>
 </head>
@@ -91,11 +91,11 @@
         <% } %>
         <!-- FIXME Step-1-3: actionに送信先URIを記述しなさい。 -->
         <!-- Tips: 「/このプロジェクト/web.xmlに記述されているservlet-name」 -->
-        <form action="[MVC_Task/employee" method="post">
+        <form action="/MVC_Task/employee" method="post">
             <div class="div-input-flex-area">
                 <div>
                     <label>社員番号　: </label>
-                    <input id="empId" type="text" name="empId" maxlength="5" value="<%=empId%>"><br>
+                    <input id="empId" type="text" name="empId" maxlength="5" value="<%= empId %>"><br>
                 </div>
                 <div>
                     <label>パスワード: </label>
