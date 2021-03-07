@@ -119,6 +119,7 @@ public final class EmployeeManagementService extends BaseService implements Empl
 						this.resultSet.getString("mail"), this.resultSet.getString("programingLanguage"),
 						this.resultSet.getString("comment"));
 
+				// 88d8580a7ea163777a19f779d77e4339d68c1c24f39f3fd90a4b1e64ff7620b8
 				// 社員情報リストへ追加
 				empResultList.add(employeeBean);
 

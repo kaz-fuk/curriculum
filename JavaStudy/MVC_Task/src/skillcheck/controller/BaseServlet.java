@@ -164,16 +164,17 @@ public abstract class BaseServlet extends HttpServlet {
 			bean.setPassword(reqPassword);
 
 			responseBean = this.ems.getEmployeeData(EmployeeManagementService.ExecuteCase.FIND_BY_EMPID, bean);
-			System.out.println("！！！！！！resEmployeeBean！！！！！！" + responseBean);
 
 			// 最初の1件を取得
 			resEmployeeBean = responseBean.getEmplyeeBeanList().stream().findFirst().orElse(null);
-			System.out.println("！！！！！！resEmployeeBean！！！！！！" + resEmployeeBean);
 
 			if (Objects.nonNull(resEmployeeBean)) {
 				// パスワードチェック
 				final String hashPassword = PasswordHashUtil.getSafetyPassword(reqPassword, reqEmpId);
+
 				if (resEmployeeBean.getPassword().equals(hashPassword)) {
+					// if (resEmployeeBean.getPassword().equals(reqPassword)) {
+
 					// ログイン成功
 					this.destinationTarget = CONST_DESTINATION_RESULT_JSP;
 					message = ConstMessage.SUCCESS_LOGIN;
